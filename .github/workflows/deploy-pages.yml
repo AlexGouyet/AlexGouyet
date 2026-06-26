@@ -2,7 +2,7 @@ name: Deploy The Austin Amp to GitHub Pages
 
 on:
   push:
-    branches: [claude/austin-music-newsletter-ldwc2k]
+    branches: [main, claude/austin-music-newsletter-ldwc2k]
   schedule:
     # Hourly content refresh (only fires once this branch is the default branch).
     - cron: "0 * * * *"
