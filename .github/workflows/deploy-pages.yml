@@ -1,8 +1,11 @@
 name: Deploy The Austin Amp to GitHub Pages
 
 on:
+  # Only main deploys — the github-pages environment restricts deployments to
+  # the default branch, and triggering on other branches just collides in the
+  # shared "pages" concurrency group.
   push:
-    branches: [main, claude/austin-music-newsletter-ldwc2k]
+    branches: [main]
   schedule:
     # Hourly content refresh (only fires once this branch is the default branch).
     - cron: "0 * * * *"
