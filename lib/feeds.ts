@@ -87,8 +87,7 @@ async function fetchSource(source: Source): Promise<NewsItem[] | null> {
         "User-Agent": "AustinAmpNewsletter/1.0 (+https://github.com/AlexGouyet)",
         Accept: "application/rss+xml, application/xml, text/xml, */*",
       },
-      // Revalidate at the data layer so each source caches for an hour.
-      next: { revalidate: 3600 },
+      cache: "no-store",
     });
     clearTimeout(timeout);
     if (!res.ok) return null;

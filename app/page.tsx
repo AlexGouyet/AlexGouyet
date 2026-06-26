@@ -1,7 +1,7 @@
 import { getNewsletter, type NewsItem } from "@/lib/feeds";
 
-// Re-fetch sources at most once an hour; render on the server.
-export const revalidate = 3600;
+// Feeds are fetched at build time and baked into static HTML; a scheduled
+// Actions rebuild refreshes the content hourly.
 
 function formatDate(iso?: string): string | null {
   if (!iso) return null;
